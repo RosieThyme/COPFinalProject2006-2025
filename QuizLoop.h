@@ -1,7 +1,3 @@
-//
-// Created by Marlycha on 3/26/2025.
-//
-
 #ifndef QUIZLOOP_H
 #define QUIZLOOP_H
 /*
@@ -9,23 +5,28 @@ Coder/Developer: Hildline Noel
 Class: COP 2006-14035, Spring 2025
 Date: March 23, 2025
 Description:
+Log: March 26,2025 - set up the QuizQuestion Function to determine the result of question
 */
 
 #include <iostream>
 #include <cstring>
 #include <limits>
 #include <vector>
-char userInput();
 
 class QuizQuestion
 {
 public:
-  std::vector<std::string> questionList = {"what does the data type 'string' represent?", "which best describes a name space?"};
-  std::vector<char> correctAnswer = {'b','a'};
+  std::vector<std::string> questionList = {};
+  std::vector<char> correctAnswer = {};
   mutable char userAnswer= ' ';
   mutable int score = 0;
   mutable int questionIndex = 0;
 
+  QuizQuestion(std::vector<std::string>  const &pquestionList,std::vector<char> const &pcorrectAnswer)
+  {
+    this->questionList = pquestionList;
+    this->correctAnswer = pcorrectAnswer;
+  }
   int gameLoop() const
   {
     for (int item = 0; item < questionList.size(); item++)
@@ -49,6 +50,7 @@ public:
     }
     return 0;
   }
+
   static char userInput()
   {
     char character;
@@ -99,14 +101,4 @@ public:
     return false;
   }
 };
-
-
-int main()
-{
-
-  QuizQuestion quizStruct;
-  quizStruct.gameLoop();
-
-  return 0;
-}
 #endif //QUIZLOOP_H
