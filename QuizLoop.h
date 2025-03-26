@@ -35,6 +35,7 @@ public:
     std::cout <<score<<"/"<<questionList.size() <<std::endl;
     return 0;
   }
+
   int nextQuestion() const
   {
     if (questionIndex < questionList.size())
