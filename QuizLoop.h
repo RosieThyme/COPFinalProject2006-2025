@@ -9,7 +9,6 @@ Log: March 26,2025 - set up the QuizQuestion Function to determine the result of
 */
 
 #include <iostream>
-#include <cstring>
 #include <limits>
 #include <vector>
 
