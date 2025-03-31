@@ -16,8 +16,8 @@ Log: March 26,2025 - set up the QuizQuestion Function to determine the result of
 class QuizQuestion
 {
 public:
-  std::vector<std::string> questionList = {};
-  std::vector<char> correctAnswer = {};
+  std::vector<std::string> questionList;
+  std::vector<char> correctAnswer;
   mutable char userAnswer= ' ';
   mutable int score = 0;
   mutable int questionIndex = 0;
