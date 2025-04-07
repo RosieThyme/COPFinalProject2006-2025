@@ -9,9 +9,9 @@
 
 class QuizWidget : public QWidget {
 private:
-    QLabel *questionLabel;
-    QLabel *optionsLabel;
-    QLabel *scoreLabel;
+    QLabel *pquestionLabel;
+    QLabel *poptionsLabel;
+    QLabel *pscoreLabel;
     QuizQuestion quizLoop;
     int currentQuestionIndex;
 
@@ -19,16 +19,16 @@ public:
     QuizWidget(QWidget *parent = nullptr)
         : QWidget(parent),
           quizLoop({
-              "Which of these best describes a namespace?",
-              "In a function invocation, an epilogue is?",
-              "The act of compiling function invocations in order to optimize code is called?",
-              "Which of these options is considered a macro?",
-              "How would you dereference the pointer variable `data`?",
-              "What is the purpose of the `virtual` keyword in C++?",
-              "Which type of memory allocation is handled by `new`?",
-              "What does the `friend` keyword do in C++?",
-              "Which operator is used to access members of a class through a pointer?",
-              "How do you prevent a class from being inherited in C++?"
+              {"Which of these best describes a namespace?","1.a file that can be open using the fopen fucntion,\n2.a library containing functions that can be accessed through the name of the library\n3.a built-in library that contains the standard classes and functions\n4.a technique used to shorten variable/function name"},
+{"In a function invocation, an epilogue is?","1.What a function executes last\n2.what happens after compling the code\n3.what occurs at the end of the main function\n4.the start of a function"},
+{"The act of compiling function invocations in order to optimize code is called?","A.function call\nB.argument vector\nC.function parameter\nD.inline function"},
+{"Which of these options is considered a macro?", "1.int data\n2.class data\n3.#define data\n4.struct data"},
+{"How would you dereference the pointer variable `data`?","1.&pdata\n2.this->pdata\n3.*pdata\n4.pdata"},
+              {"What is the purpose of the `virtual` keyword in C++?"},
+              {"Which type of memory allocation is handled by `new`?"},
+              {"What does the `friend` keyword do in C++?"},
+              {"Which operator is used to access members of a class through a pointer?"},
+              {"How do you prevent a class from being inherited in C++?"}
           },
           {'1', '3', '2', '4', '1', '2', '3', '4', '1', '3'}),
           currentQuestionIndex(0) {
@@ -37,13 +37,13 @@ public:
         resize(500, 300);
 
         QVBoxLayout *layout = new QVBoxLayout(this);
-        questionLabel = new QLabel(this);
-        optionsLabel = new QLabel(this);
-        scoreLabel = new QLabel(this);
+        pquestionLabel = new QLabel(this);
+        poptionsLabel = new QLabel(this);
+        pscoreLabel = new QLabel(this);
 
-        layout->addWidget(questionLabel);
-        layout->addWidget(optionsLabel);
-        layout->addWidget(scoreLabel);
+        layout->addWidget(pquestionLabel);
+        layout->addWidget(poptionsLabel);
+        layout->addWidget(pscoreLabel);
         setLayout(layout);
 
         displayQuestion();
@@ -61,14 +61,14 @@ protected:
 private:
     void displayQuestion() {
         if (currentQuestionIndex < quizLoop.questionList.size()) {
-            questionLabel->setText(QString::fromStdString(quizLoop.questionList[currentQuestionIndex]));
-            optionsLabel->setText("1. Option 1\n2. Option 2\n3. Option 3\n4. Option 4");
-            scoreLabel->setText("Score: " + QString::number(quizLoop.score));
+            pquestionLabel->setText(QString::fromStdString(quizLoop.questionList[currentQuestionIndex][0]));
+            poptionsLabel->setText(QString::fromStdString(quizLoop.questionList[currentQuestionIndex][1]);
+            pscoreLabel->setText("Score: " + QString::number(quizLoop.score));
         } else {
-            questionLabel->setText("Congrats! You have finished the quiz!");
-            optionsLabel->setText("Final Score: " + QString::number(quizLoop.score) + " / " +
+            pquestionLabel->setText("Congrats! You have finished the quiz!");
+            poptionsLabel->setText("Final Score: " + QString::number(quizLoop.score) + " / " +
                                   QString::number(quizLoop.questionList.size()));
-            scoreLabel->setText("");
+            pscoreLabel->setText("");
         }
     }
 
@@ -77,6 +77,7 @@ private:
             quizLoop.userAnswer = userChoice;
             quizLoop.isCorrectAnswer();
             currentQuestionIndex++;
+            pcorrectAnswer++;
             displayQuestion();
         }
     }
