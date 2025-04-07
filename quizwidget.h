@@ -9,9 +9,9 @@
 
 class QuizWidget : public QWidget {
 private:
-    QLabel *questionLabel;
-    QLabel *optionsLabel;
-    QLabel *scoreLabel;
+    QLabel *pquestionLabel;
+    QLabel *poptionsLabel;
+    QLabel *pscoreLabel;
     QuizQuestion quizLoop;
     int currentQuestionIndex;
 
@@ -37,13 +37,13 @@ public:
         resize(500, 300);
 
         QVBoxLayout *layout = new QVBoxLayout(this);
-        questionLabel = new QLabel(this);
-        optionsLabel = new QLabel(this);
-        scoreLabel = new QLabel(this);
+        pquestionLabel = new QLabel(this);
+        poptionsLabel = new QLabel(this);
+        pscoreLabel = new QLabel(this);
 
-        layout->addWidget(questionLabel);
-        layout->addWidget(optionsLabel);
-        layout->addWidget(scoreLabel);
+        layout->addWidget(pquestionLabel);
+        layout->addWidget(poptionsLabel);
+        layout->addWidget(pscoreLabel);
         setLayout(layout);
 
         displayQuestion();
@@ -61,14 +61,14 @@ protected:
 private:
     void displayQuestion() {
         if (currentQuestionIndex < quizLoop.questionList.size()) {
-            questionLabel->setText(QString::fromStdString(quizLoop.questionList[currentQuestionIndex]));
-            optionsLabel->setText("1. Option 1\n2. Option 2\n3. Option 3\n4. Option 4");
-            scoreLabel->setText("Score: " + QString::number(quizLoop.score));
+            pquestionLabel->setText(QString::fromStdString(quizLoop.questionList[currentQuestionIndex]));
+            poptionsLabel->setText("1. Option 1\n2. Option 2\n3. Option 3\n4. Option 4");
+            pscoreLabel->setText("Score: " + QString::number(quizLoop.score));
         } else {
-            questionLabel->setText("Congrats! You have finished the quiz!");
-            optionsLabel->setText("Final Score: " + QString::number(quizLoop.score) + " / " +
+            pquestionLabel->setText("Congrats! You have finished the quiz!");
+            poptionsLabel->setText("Final Score: " + QString::number(quizLoop.score) + " / " +
                                   QString::number(quizLoop.questionList.size()));
-            scoreLabel->setText("");
+            pscoreLabel->setText("");
         }
     }
 
