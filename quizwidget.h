@@ -75,9 +75,11 @@ private:
     void processAnswer(char userChoice) {
         if (currentQuestionIndex < quizLoop.questionList.size()) {
             quizLoop.userAnswer = userChoice;
-            quizLoop.isCorrectAnswer();
+            if (userChoice == quizLoop.correctAnswer[currentQuestionIndex])
+            {
+                quizLoop.score++;
+            }
             currentQuestionIndex++;
-            pcorrectAnswer++;
             displayQuestion();
         }
     }
