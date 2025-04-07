@@ -7,8 +7,7 @@
 #include <QKeyEvent>
 #include "quizloop.h"
 
-class QuizWidget : public QWidget
-{
+class QuizWidget : public QWidget {
 private:
     QLabel *questionLabel;
     QLabel *optionsLabel;
@@ -19,22 +18,21 @@ private:
 public:
     QuizWidget(QWidget *parent = nullptr)
         : QWidget(parent),
-          quizLoop(
-              {
-                       "Which of these best describes a namespace?",
-                       "In a function invocation, an epilogue is?",
-                       "The act of compiling function invocations in order to optimize code is called?",
-                       "Which of these options is considered a macro?",
-                       "How would you dereference the pointer variable `data`?",
-                       "What is the purpose of the `virtual` keyword in C++?",
-                       "Which type of memory allocation is handled by `new`?",
-                       "What does the `friend` keyword do in C++?",
-                       "Which operator is used to access members of a class through a pointer?",
-                       "How do you prevent a class from being inherited in C++?"
-                   },
-                   {'1', '3', '2', '4', '1', '2', '3', '4', '1', '3'}),
-          currentQuestionIndex(0)
-    {
+          quizLoop({
+              "Which of these best describes a namespace?",
+              "In a function invocation, an epilogue is?",
+              "The act of compiling function invocations in order to optimize code is called?",
+              "Which of these options is considered a macro?",
+              "How would you dereference the pointer variable `data`?",
+              "What is the purpose of the `virtual` keyword in C++?",
+              "Which type of memory allocation is handled by `new`?",
+              "What does the `friend` keyword do in C++?",
+              "Which operator is used to access members of a class through a pointer?",
+              "How do you prevent a class from being inherited in C++?"
+          },
+          {'1', '3', '2', '4', '1', '2', '3', '4', '1', '3'}),
+          currentQuestionIndex(0) {
+
         setWindowTitle("C++ Quiz Game");
         resize(500, 300);
 
@@ -52,26 +50,21 @@ public:
     }
 
 protected:
-    void keyPressEvent(QKeyEvent *event) override
-    {
+    void keyPressEvent(QKeyEvent *event) override {
         int key = event->key();
-        if (key >= Qt::Key_1 && key <= Qt::Key_4)
-            {
+        if (key >= Qt::Key_1 && key <= Qt::Key_4) {
             char selectedAnswer = static_cast<char>((key - Qt::Key_1) + '1');
             processAnswer(selectedAnswer);
         }
     }
 
 private:
-    void displayQuestion()
-    {
-        if (currentQuestionIndex < quizLoop.questionList.size())
-            {
+    void displayQuestion() {
+        if (currentQuestionIndex < quizLoop.questionList.size()) {
             questionLabel->setText(QString::fromStdString(quizLoop.questionList[currentQuestionIndex]));
             optionsLabel->setText("1. Option 1\n2. Option 2\n3. Option 3\n4. Option 4");
             scoreLabel->setText("Score: " + QString::number(quizLoop.score));
-        } else
-            {
+        } else {
             questionLabel->setText("Congrats! You have finished the quiz!");
             optionsLabel->setText("Final Score: " + QString::number(quizLoop.score) + " / " +
                                   QString::number(quizLoop.questionList.size()));
@@ -79,8 +72,7 @@ private:
         }
     }
 
-    void processAnswer(char userChoice)
-    {
+    void processAnswer(char userChoice) {
         if (currentQuestionIndex < quizLoop.questionList.size()) {
             quizLoop.userAnswer = userChoice;
             quizLoop.isCorrectAnswer();

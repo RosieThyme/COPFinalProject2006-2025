@@ -1,5 +1,12 @@
 #ifndef QUIZLOOP_H
 #define QUIZLOOP_H
+/*
+Coder/Developer: Hildline Noel
+Class: COP 2006-14035, Spring 2025
+Date: March 23, 2025
+Description:
+Log: March 26,2025 - set up the QuizQuestion Function to determine the result of question
+*/
 
 #include <iostream>
 #include <vector>
