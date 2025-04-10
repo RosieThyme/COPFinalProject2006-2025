@@ -21,7 +21,7 @@ public:
           quizLoop({
               {"Which of these best describes a namespace?","1.a file that can be open using the fopen function,\n2.a library containing functions that can be accessed through the name of the library\n3.a built-in library that contains the standard classes and functions\n4.a technique used to shorten variable/function name"},
             {"In a function invocation, an epilogue is?","1.What a function executes last\n2.what happens after compling the code\n3.what occurs at the end of the main function\n4.the start of a function"},
-            {"The act of compiling function invocations in order to optimize code is called?","A.function call\nB.argument vector\nC.function parameter\nD.inline function"},
+            {"The act of compiling function invocations in order to optimize code is called?","1.function call\n2.argument vector\n3.function parameter\n4.inline function"},
             {"Which of these options is considered a macro?", "1.int data\n2.class data\n3.#define data\n4.struct data"},
             {"How would you dereference the pointer variable `data`?","1.&pdata\n2.this->pdata\n3.*pdata\n4.pdata"},
               {"What is the purpose of the `virtual` keyword in C++?","1.to create a GUI in the program\n2.allows the programmer to create new functions from the base class\n3.to hide the implementation of the program from the user\n4. A method of error handling"},
