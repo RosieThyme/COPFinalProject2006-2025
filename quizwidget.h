@@ -19,12 +19,12 @@ public:
     QuizWidget(QWidget *parent = nullptr)
         : QWidget(parent),
           quizLoop({
-              {"Which of these best describes a namespace?","1.a file that can be open using the fopen function,\n2.a library containing functions that can be accessed through the name of the library\n3.a built-in library that contains the standard classes and functions\n4.a technique used to shorten variable/function name"},
-            {"In a function invocation, an epilogue is?","1.What a function executes last\n2.what happens after compling the code\n3.what occurs at the end of the main function\n4.the start of a function"},
-            {"The act of compiling function invocations in order to optimize code is called?","1.function call\n2.argument vector\n3.function parameter\n4.inline function"},
+              {"Which of these best describes a namespace?","1.A file that can be open using the fopen function,\n2.A library containing functions that can be accessed through the name of the library\n3.A built-in library that contains the standard classes and functions\n4.A technique used to shorten variable/function name"},
+            {"In a function invocation, an epilogue is?","1.What a function executes last\n2.What happens after compling the code\n3.What occurs at the end of the main function\n4.The start of a function"},
+            {"The act of compiling function invocations in order to optimize code is called?","1.Function call\n2.Argument vector\n3.Function parameter\n4.Inline function"},
             {"Which of these options is considered a macro?", "1.int data\n2.class data\n3.#define data\n4.struct data"},
             {"How would you dereference the pointer variable `data`?","1.&pdata\n2.this->pdata\n3.*pdata\n4.pdata"},
-              {"What is the purpose of the `virtual` keyword in C++?","1.to create a GUI in the program\n2.allows the programmer to create new functions from the base class\n3.to hide the implementation of the program from the user\n4. A method of error handling"},
+              {"What is the purpose of the `virtual` keyword in C++?","1.To create a GUI in the program\n2.Allows the programmer to create new functions from the base class\n3.To hide the implementation of the program from the user\n4. A method of error handling"},
               {"Which type of memory allocation is handled by `new`?","1.stack allocation\n2.heap allocation\n3.dynamic memory allocation\n4.static memory allocation"},
               {"What does the `friend` keyword do in C++?","1.creates a new function of the class\n2.inherits the class\n3.a form of a parent class in c++\n4.allows access to a class's protected and private members"},
               {"Which operator is used to access members of a class through a pointer?","1.->\n2.&\n3.^\n4.\\n"},
