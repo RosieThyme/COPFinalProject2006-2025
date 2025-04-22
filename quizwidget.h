@@ -1,3 +1,11 @@
+/*
+Coder/Developer:
+Class: COP 2006-14035, Spring 2025
+Date: March 23, 2025
+Description:
+Log:
+*/
+
 #ifndef QUIZWIDGET_H
 #define QUIZWIDGET_H
 
@@ -40,7 +48,7 @@ public:
         pquestionLabel = new QLabel(this);
         poptionsLabel = new QLabel(this);
         pscoreLabel = new QLabel(this);
-
+        //creates text on the Window
         layout->addWidget(pquestionLabel);
         layout->addWidget(poptionsLabel);
         layout->addWidget(pscoreLabel);
@@ -59,6 +67,7 @@ protected:
     }
 
 private:
+    //checks to see if the Index number exceeds the size of the vector
     void displayQuestion() {
         if (currentQuestionIndex < quizLoop.questionList.size()) {
             pquestionLabel->setText(QString::fromStdString(quizLoop.questionList[currentQuestionIndex][0]));
